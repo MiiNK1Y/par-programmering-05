@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
     internal class Store
     {
@@ -12,10 +6,7 @@ namespace ConsoleApp1
         public string Specialty { get; private set; }
         public int PriceClass { get; private set; }
 
-        public Store()
-        {
-            
-        }
+        public Store() { }
 
         public Store(string name, string specialty, int priceClass)
         {
@@ -26,7 +17,7 @@ namespace ConsoleApp1
 
         public void PrintStoreInfo()
         {
-            Console.WriteLine($"{Name} - {TranslatePriceClass()} {Specialty}");
+            Console.WriteLine($"{Name} | {TranslatePriceClass()} | {Specialty}");
         }
 
         public void SetStoreInfo()
@@ -38,19 +29,19 @@ namespace ConsoleApp1
 
         public void SetStoreName()
         {
-            Console.WriteLine("Name of store: ");
-            Name = Console.ReadLine();
+            Console.Write("Name of store: ");
+            Name = Console.ReadLine() ?? "";
         }
 
         public void SetStoreSpecialty()
         {
-            Console.WriteLine("Specialty: ");
-            Specialty = Console.ReadLine();
+            Console.Write("Specialty: ");
+            Specialty = Console.ReadLine() ?? "";
         }
 
         public void SetItemsPriceClass()
         {
-            Console.WriteLine("Items' price class (1-3): ");
+            Console.Write("Items' price class (1-3): ");
             PriceClass = Convert.ToInt32(Console.ReadLine());
         }
 
